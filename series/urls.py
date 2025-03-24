@@ -1,13 +1,11 @@
-from django.urls import include, path
+from django.urls import path
 from rest_framework.routers import DefaultRouter
-from rest_framework.urls import urlpatterns
 
-from series.views import SeriesView, SeriesViewSet, EpisodesViewSet, EpisodesView, CastsView, AdminLoginView, \
-    TokenExpireCheckView
+from series.views import SeriesView, EpisodesView, CastsView
 
-router = DefaultRouter()
-router.register(r'admin/series', SeriesViewSet, basename='Series')
-router.register(r'admin/episodes', EpisodesViewSet)
+# router = DefaultRouter()
+# router.register(r'admin/series', SeriesViewSet, basename='Series')
+# router.register(r'admin/episodes', EpisodesViewSet)
 
 urlpatterns = [
     path('series/', SeriesView.as_view()),
