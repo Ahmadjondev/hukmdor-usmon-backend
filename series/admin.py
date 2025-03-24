@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from series.models import Series, Episode
+from series.models import Series, Episode, Casts
 
 
 # Register your models here.
@@ -14,3 +14,9 @@ class SeriesAdmin(admin.ModelAdmin):
 @admin.register(Episode)
 class EpisodeAdmin(admin.ModelAdmin):
     list_display = ('series', 'title', 'link')
+
+
+@admin.register(Casts)
+class CastsAdmin(admin.ModelAdmin):
+    list_display = ('series', 'cast', 'description')
+    search_fields = ('series__title', 'cast', 'description')

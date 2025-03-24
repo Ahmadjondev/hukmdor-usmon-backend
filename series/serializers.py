@@ -1,7 +1,6 @@
-from django.db.models.functions import Cast
 from rest_framework import serializers
 
-from series.models import Episode, Series
+from series.models import Episode, Series, Casts
 
 
 class SeriesSerializer(serializers.ModelSerializer):
@@ -10,9 +9,9 @@ class SeriesSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class CastSerializer(serializers.ModelSerializer):
+class CastsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Cast
+        model = Casts
         fields = '__all__'
 
 
